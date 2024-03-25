@@ -20,22 +20,22 @@ jobs:
         matrix:
           include:
             # - ubuntu-version: 20.04
-            #   php-version: php81-fpm
+            #   php-version: 8.1
             #   node-version: 12
             # - ubuntu-version: 20.04
-            #   php-version: php81-fpm
+            #   php-version: 8.1
             #   node-version: 20
             - ubuntu-version: 20.04
-              php-version: php82-fpm
+              php-version: 8.2
               node-version: 12
             # - ubuntu-version: 20.04
-            #   php-version: php82-fpm
+            #   php-version: 8.2
             #   node-version: 20
             # - ubuntu-version: 20.04
-            #   php-version: php83-fpm
+            #   php-version: 8.3
             #   node-version: 12
             # - ubuntu-version: 20.04
-            #   php-version: php83-fpm
+            #   php-version: 8.3
             #   node-version: 20
   
     steps:
