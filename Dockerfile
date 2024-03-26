@@ -11,10 +11,10 @@ LABEL node=${NODE_VERSION}
 
 ENV TZ=UTC
 ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LC_ALL=C.UTF-8
 
-RUN export LC_ALL=C.UTF-8 && \
-    DEBIAN_FRONTEND=noninteractive && \
-    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
