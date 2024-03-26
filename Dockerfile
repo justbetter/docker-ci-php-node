@@ -67,10 +67,7 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/cache/apt/lists
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer && \
-    chmod +x /usr/local/bin/composer && \
-    composer self-update
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN curl https://get.volta.sh | bash
 
@@ -78,8 +75,6 @@ RUN curl https://get.volta.sh | bash
 RUN mkdir ~/.ssh && \
     touch ~/.ssh_config
 
-# Display versions installed
-RUN php -v
-RUN composer --version
-RUN node -v
-RUN npm -v
+# verify versions installed
+RUN php -v && php -r "exit((int)!version_compare(PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION, '${PHP_VERSION}', '='));"
+RUN node -v && [ `node -v | sed -e "s/^v//" -e "s/\..*$//"` -eq ${NODE_VERSION} ]
