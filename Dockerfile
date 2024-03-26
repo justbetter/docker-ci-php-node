@@ -58,7 +58,7 @@ RUN apt-get update && \
     php${PHP_VERSION}-intl \
     php${PHP_VERSION}-imap \
     php${PHP_VERSION}-imagick \
-    php-memcached && \
+    php${PHP_VERSION}-memcached && \
     # install Node
     curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x -o nodesource_setup.sh && bash nodesource_setup.sh && \
     apt-get install nodejs -y && \
