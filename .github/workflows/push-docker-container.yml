@@ -37,6 +37,12 @@ jobs:
             - ubuntu-version: 22.04
               php-version: 8.3
               node-version: 22
+            - ubuntu-version: 24.04
+              php-version: 8.4
+              node-version: 24
+            - ubuntu-version: 24.04
+              php-version: 8.5
+              node-version: 24
 
     steps:
       -
