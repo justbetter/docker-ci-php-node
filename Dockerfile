@@ -72,7 +72,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN curl https://get.volta.sh | bash
 
 # Other
-RUN mkdir ~/.ssh && \
+RUN mkdir -p ~/.ssh && \
     touch ~/.ssh_config
 
 # verify versions installed
