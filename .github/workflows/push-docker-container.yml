@@ -20,9 +20,6 @@ jobs:
         matrix:
           include:
             - ubuntu-version: 22.04
-              php-version: 8.3
-              node-version: 14
-            - ubuntu-version: 22.04
               php-version: 8.2
               node-version: 22
             - ubuntu-version: 22.04
