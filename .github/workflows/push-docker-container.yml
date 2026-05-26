@@ -19,15 +19,6 @@ jobs:
         fail-fast: true
         matrix:
           include:
-            - ubuntu-version: 20.04
-              php-version: 8.1
-              node-version: 12
-            - ubuntu-version: 20.04
-              php-version: 8.2
-              node-version: 12
-            - ubuntu-version: 22.04
-              php-version: 8.2
-              node-version: 14
             - ubuntu-version: 22.04
               php-version: 8.3
               node-version: 14
